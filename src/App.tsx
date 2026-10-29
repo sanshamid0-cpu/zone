@@ -90,6 +90,14 @@ interface PaidPlayer {
   iconGradient?: string;
 }
 
+const getAssetUrl = (path: string) => {
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  const baseUrl = import.meta.env.BASE_URL || '/';
+  const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${cleanBase}${cleanPath}`;
+};
+
 export default function App() {
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const [orderModalOpen, setOrderModalOpen] = useState(false);
@@ -120,7 +128,7 @@ export default function App() {
         'Direct login on Smart TV, Firestick, Apple TV',
         'Zero interruptions & 30-day replacement warranty'
       ],
-      image: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.45_PM_ca2ad2dc.jpeg',
+      image: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.45_PM_ca2ad2dc.jpeg'),
     },
     {
       id: 'nstream-mobile',
@@ -138,7 +146,7 @@ export default function App() {
         'Offline movie and drama series downloads',
         'Instant 5-minute delivery on WhatsApp'
       ],
-      image: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.45_PM__2__c7cbbb13.jpeg',
+      image: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.45_PM__2__c7cbbb13.jpeg'),
     },
     {
       id: 'prime-stream',
@@ -156,7 +164,7 @@ export default function App() {
         'Works on Samsung, LG, Firestick & Android devices',
         'Full 30-day uninterrupted guaranteed screen'
       ],
-      image: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.44_PM_fff9b4d8.jpeg',
+      image: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.44_PM_fff9b4d8.jpeg'),
     },
     {
       id: 'senbo-server',
@@ -174,7 +182,7 @@ export default function App() {
         'Compatible with OraPro, ORA, Kemet TV, Ibo One, Smart TV',
         'Raw 60 FPS live football & ICC cricket streams'
       ],
-      image: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.44_PM__1__170c5b46.jpeg',
+      image: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.44_PM__1__170c5b46.jpeg'),
     },
     {
       id: 'tube-premium-pass',
@@ -192,7 +200,7 @@ export default function App() {
         'Offline high-speed video and music downloads',
         'Instant activation on your personal TV code / email'
       ],
-      image: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.46_PM_40f49316.jpeg',
+      image: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.46_PM_40f49316.jpeg'),
     },
     {
       id: 'smart-ai-gpt',
@@ -235,7 +243,7 @@ export default function App() {
       ],
       activationTime: '5 Minutes',
       iconGradient: 'from-[#ff007f] via-rose-600 to-[#ccff00]',
-      imageProofPath: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.45_PM__1__aecb195d.jpeg',
+      imageProofPath: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.45_PM__1__aecb195d.jpeg'),
     },
     {
       id: 'orapro',
@@ -256,7 +264,7 @@ export default function App() {
       ],
       activationTime: '5 Minutes',
       iconGradient: 'from-[#00f0ff] via-teal-500 to-emerald-500',
-      imageProofPath: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.24.08_PM__1__b8c6e48b.jpeg',
+      imageProofPath: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.24.08_PM__1__b8c6e48b.jpeg'),
     },
     {
       id: 'ora-iptv',
@@ -277,7 +285,7 @@ export default function App() {
       ],
       activationTime: '5 Minutes',
       iconGradient: 'from-[#ccff00] via-emerald-400 to-teal-500',
-      imageProofPath: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.24.08_PM__1__b8c6e48b.jpeg',
+      imageProofPath: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.24.08_PM__1__b8c6e48b.jpeg'),
     },
     {
       id: 'kemet-tv',
@@ -298,7 +306,7 @@ export default function App() {
       ],
       activationTime: '5-10 Minutes',
       iconGradient: 'from-[#ffaa00] via-amber-500 to-orange-600',
-      imageProofPath: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.24.09_PM_5772ce06.jpeg',
+      imageProofPath: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.24.09_PM_5772ce06.jpeg'),
     },
     {
       id: 'ibo-one',
@@ -319,7 +327,7 @@ export default function App() {
       ],
       activationTime: '5 Minutes',
       iconGradient: 'from-[#00ff66] via-teal-400 to-cyan-500',
-      imageProofPath: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.24.08_PM_066d61cc.jpeg',
+      imageProofPath: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.24.08_PM_066d61cc.jpeg'),
     },
     {
       id: 'ib-player',
@@ -340,7 +348,7 @@ export default function App() {
       ],
       activationTime: '5 Minutes',
       iconGradient: 'from-rose-600 via-[#ff007f] to-amber-500',
-      imageProofPath: '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.24.06_PM_3cd5677e.jpeg',
+      imageProofPath: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.24.06_PM_3cd5677e.jpeg'),
     },
   ];
 
@@ -623,7 +631,7 @@ export default function App() {
                 {/* Primary Screen Area Using User's High-Resolution Images */}
                 <div className="relative rounded-2xl overflow-hidden border-2 border-slate-700/80 shadow-2xl group">
                   <img
-                    src={
+                    src={getAssetUrl(
                       activeScreenSlide === 'stadium'
                         ? '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.44_PM__1__170c5b46.jpeg'
                         : activeScreenSlide === 'cinema'
@@ -633,7 +641,7 @@ export default function App() {
                         : activeScreenSlide === 'profiles'
                         ? '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.45_PM__2__c7cbbb13.jpeg'
                         : '/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.46_PM_40f49316.jpeg'
-                    }
+                    )}
                     alt=""
                     className="w-full h-64 sm:h-76 object-cover filter brightness-[0.95] contrast-105 group-hover:scale-105 transition-transform duration-700 bg-slate-950"
                   />
