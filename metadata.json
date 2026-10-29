@@ -1,0 +1,6 @@
+{
+  "name": "Racon Condos - Luxury Residences & Living",
+  "description": "Modern, luxury real estate and condominium showcase platform inspired by raconconds.net, featuring floor plans, interactive unit finder, amenity tours, and bilingual Urdu/English support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
