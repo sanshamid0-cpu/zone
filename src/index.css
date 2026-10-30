@@ -53,15 +53,38 @@
   animation: floatSlow 4s ease-in-out infinite;
 }
 
-/* Netlify Badge/Logo ko hide karne ke liye */
+/* Comprehensive Netlify Badge & Container Removal */
 a[href*="netlify.com"],
 a[href*="netlify.app"],
 .netlify-badge,
-#netlify-badge {
+#netlify-badge,
+[data-netlify-deploy-id],
+div[class*="netlify"],
+iframe[src*="netlify"],
+div:has(> a[href*="netlify"]) {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  transform: translate3d(-9999px, -9999px, 0) !important;
+  clip-path: inset(100%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  max-width: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Solid corner cover guard positioned below the WhatsApp button */
+.netlify-corner-shield {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 140px;
+  height: 70px;
+  background-color: #020509;
+  z-index: 99999;
+  pointer-events: none;
 }
 
 /* Common Circular Button Style */
