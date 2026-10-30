@@ -16,6 +16,29 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- JavaScript to remove Netlify badge permanently -->
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        setInterval(() => {
+          document.querySelectorAll('a').forEach(el => {
+            if (el.href && (el.href.includes('netlify.com') || el.href.includes('netlify.app'))) {
+              el.remove();
+            }
+          });
+          // Remove any elements containing Netlify badge text/logo (including shadowRoot)
+          document.querySelectorAll('*').forEach(node => {
+            if (node.shadowRoot) {
+              node.shadowRoot.querySelectorAll('a, div, span').forEach(subEl => {
+                if (subEl.textContent && subEl.textContent.includes('Netlify')) {
+                  subEl.remove();
+                }
+              });
+            }
+          });
+        }, 500);
+      });
+    </script>
   </body>
 </html>
 
