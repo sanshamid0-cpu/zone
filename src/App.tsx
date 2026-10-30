@@ -101,7 +101,7 @@ const getAssetUrl = (path: string) => {
 export default function App() {
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const [orderModalOpen, setOrderModalOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState('N-Stream Ultra 4K (TV Screen) - Rs. 1000');
+  const [selectedPlan, setSelectedPlan] = useState('Screen Netflix Ultra 4K (TV Screen) - Rs. 1000');
   const [selectedPlayer, setSelectedPlayer] = useState('OraPro IPTV Player');
   const [macAddress, setMacAddress] = useState('');
   const [deviceKey, setDeviceKey] = useState('');
@@ -110,12 +110,12 @@ export default function App() {
   const [downloadSuccessToast, setDownloadSuccessToast] = useState<string | null>(null);
   const [activeScreenSlide, setActiveScreenSlide] = useState<'stadium' | 'cinema' | 'scifi' | 'profiles' | 'youtube'>('stadium');
 
-  // OFFICIAL 1-MONTH RATES WITH HIGHLIGHTER COLORS & COPYRIGHT-SAFE LABELS
+  // OFFICIAL 1-MONTH RATES WITH HIGHLIGHTER COLORS & SCREEN NETFLIX LABELS
   const monthlyRates: MonthlyRateItem[] = [
     {
-      id: 'nstream-tv',
-      serviceName: 'N-Stream Ultra 4K (TV Screen)',
-      safeAlias: 'RedFlix Cinema 4K TV Profile',
+      id: 'screen-netflix-tv',
+      serviceName: 'Screen Netflix Ultra 4K (TV Screen)',
+      safeAlias: 'اسکرین نیٹ فلیکس • Screen Netflix Ultra 4K TV Profile',
       screenType: 'Smart TV, Firestick & Android TV Screen',
       pricePKR: 1000,
       duration: '1 Month',
@@ -131,9 +131,9 @@ export default function App() {
       image: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.45_PM_ca2ad2dc.jpeg'),
     },
     {
-      id: 'nstream-mobile',
-      serviceName: 'N-Stream Mobile HD',
-      safeAlias: 'RedFlix Mobile Personal Screen',
+      id: 'screen-netflix-mobile',
+      serviceName: 'Screen Netflix Mobile HD',
+      safeAlias: 'اسکرین نیٹ فلیکس • Screen Netflix Mobile Personal Screen',
       screenType: 'Android & iOS Mobile / Tablet Screen',
       pricePKR: 800,
       duration: '1 Month',
@@ -149,9 +149,9 @@ export default function App() {
       image: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.45_PM__2__c7cbbb13.jpeg'),
     },
     {
-      id: 'prime-stream',
-      serviceName: 'PrimeVision Video Pass',
-      safeAlias: 'A-Prime Cinema Ultra Screen',
+      id: 'screen-prime-video',
+      serviceName: 'Screen Prime Video',
+      safeAlias: 'اسکرین پرائم ویڈیو • Screen Prime Video Ultra Screen',
       screenType: 'TV, Mobile, PC & Tablet Screen',
       pricePKR: 600,
       duration: '1 Month',
@@ -165,24 +165,6 @@ export default function App() {
         'Full 30-day uninterrupted guaranteed screen'
       ],
       image: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.44_PM_fff9b4d8.jpeg'),
-    },
-    {
-      id: 'senbo-server',
-      serviceName: 'Senbo (Cinevo) 4K Server',
-      safeAlias: 'VIP Anti-Freeze Sports & Live TV Server',
-      screenType: 'Live Channels, Sports & VOD Server',
-      pricePKR: 1500,
-      duration: '1 Month',
-      badge: 'Live Sports VIP',
-      badgeColor: 'bg-[#00ff66]/20 text-[#00ff66] border-[#00ff66]/50',
-      highlighterStyle: 'border-[#00ff66] shadow-[0_0_30px_rgba(0,255,102,0.35)]',
-      features: [
-        'Dedicated Anti-Freeze 4K high-speed stream line',
-        'Over 25,000+ live sports, cricket, football & drama feeds',
-        'Compatible with OraPro, ORA, Kemet TV, Ibo One, Smart TV',
-        'Raw 60 FPS live football & ICC cricket streams'
-      ],
-      image: getAssetUrl('/assets/aistudio/WhatsApp_Image_2026-10-29_at_10.31.44_PM__1__170c5b46.jpeg'),
     },
     {
       id: 'tube-premium-pass',
@@ -440,7 +422,7 @@ export default function App() {
             TV ZONE LIVE: 4K ULTRA HDR STREAMING INFRASTRUCTURE
           </span>
           <span className="text-[#ff007f] font-bold">
-            📺 N-STREAM 4K TV: RS. 1000 • N-STREAM MOBILE: RS. 800 • PRIMEVISION: RS. 600 • SENBO SERVER: RS. 1500
+            📺 SCREEN NETFLIX 4K TV: RS. 1000 • SCREEN NETFLIX MOBILE: RS. 800 • SCREEN PRIME VIDEO: RS. 600 • TUBE-PREMIUM: RS. 450
           </span>
           <span className="text-[#00f0ff]">
             ⚡ VERIFIED PLAYERS: ORA HUB • OraPro • ORA IPTV • Kemet TV • Ibo One • Ib Player Pro
@@ -670,7 +652,7 @@ export default function App() {
                         <Play className="w-5 h-5 fill-current ml-0.5" />
                       </div>
                       <div>
-                        <div className="text-xs font-black text-white">Senbo 4K Anti-Freeze Line</div>
+                        <div className="text-xs font-black text-white">TV Zone 4K Live Broadcast Line</div>
                         <div className="text-[10px] text-[#ccff00] font-mono font-bold">
                           25,000+ Channels & VOD Stream Active
                         </div>
@@ -1121,8 +1103,8 @@ export default function App() {
           {/* Easypaisa */}
           <div className="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-[#ccff00] rounded-3xl p-6 shadow-[0_0_30px_rgba(204,255,0,0.25)] relative overflow-hidden group">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-xl bg-[#ccff00]/20 border-2 border-[#ccff00] text-[#ccff00] flex items-center justify-center font-black text-xl">
-                EP
+              <div className="px-3.5 h-11 rounded-xl bg-[#ccff00]/20 border-2 border-[#ccff00] text-[#ccff00] flex items-center justify-center font-black text-xs sm:text-sm tracking-wider uppercase">
+                Telenor
               </div>
               <span className="text-[11px] font-mono bg-[#ccff00]/15 text-[#ccff00] px-3 py-1 rounded-full border border-[#ccff00]/40 font-black">
                 Active 24/7
@@ -1162,8 +1144,8 @@ export default function App() {
           {/* JazzCash */}
           <div className="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-[#ff007f] rounded-3xl p-6 shadow-[0_0_30px_rgba(255,0,127,0.25)] relative overflow-hidden group">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-xl bg-[#ff007f]/20 border-2 border-[#ff007f] text-[#ff007f] flex items-center justify-center font-black text-xl">
-                JC
+              <div className="px-3.5 h-11 rounded-xl bg-[#ff007f]/20 border-2 border-[#ff007f] text-[#ff007f] flex items-center justify-center font-black text-xs sm:text-sm tracking-wider uppercase">
+                Mobilink
               </div>
               <span className="text-[11px] font-mono bg-[#ff007f]/15 text-[#ff007f] px-3 py-1 rounded-full border border-[#ff007f]/40 font-black">
                 Instant Credit
@@ -1203,7 +1185,7 @@ export default function App() {
           {/* Raast ID & WhatsApp */}
           <div className="bg-gradient-to-b from-slate-900 to-slate-950 border-2 border-[#00f0ff] rounded-3xl p-6 shadow-[0_0_30px_rgba(0,240,255,0.25)] relative overflow-hidden group">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 rounded-xl bg-[#00f0ff]/20 border-2 border-[#00f0ff] text-[#00f0ff] flex items-center justify-center font-black text-xl">
+              <div className="px-3.5 h-11 rounded-xl bg-[#00f0ff]/20 border-2 border-[#00f0ff] text-[#00f0ff] flex items-center justify-center font-black text-xs sm:text-sm tracking-wider uppercase">
                 RAAST
               </div>
               <span className="text-[11px] font-mono bg-[#00f0ff]/15 text-[#00f0ff] px-3 py-1 rounded-full border border-[#00f0ff]/40 font-black">
@@ -1313,10 +1295,9 @@ export default function App() {
                     onChange={(e) => setSelectedPlan(e.target.value)}
                     className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-white focus:outline-none focus:border-[#ccff00]"
                   >
-                    <option value="N-Stream Ultra 4K (TV Screen) - Rs. 1000">N-Stream Ultra 4K (TV) - Rs. 1000</option>
-                    <option value="N-Stream Mobile HD - Rs. 800">N-Stream Mobile HD - Rs. 800</option>
-                    <option value="PrimeVision Video Pass - Rs. 600">PrimeVision Video Pass - Rs. 600</option>
-                    <option value="Senbo (Cinevo) 4K Server - Rs. 1500">Senbo (Cinevo) 4K Server - Rs. 1500</option>
+                    <option value="Screen Netflix Ultra 4K (TV Screen) - Rs. 1000">Screen Netflix Ultra 4K (TV) - Rs. 1000</option>
+                    <option value="Screen Netflix Mobile HD - Rs. 800">Screen Netflix Mobile HD - Rs. 800</option>
+                    <option value="Screen Prime Video - Rs. 600">Screen Prime Video - Rs. 600</option>
                     <option value="Tube-Premium Ad-Free Pass - Rs. 450">Tube-Premium Ad-Free Pass - Rs. 450</option>
                     <option value="Smart AI GPT-4o Plus Pass - Rs. 1200">Smart AI GPT-4o Plus Pass - Rs. 1200</option>
                     <option value="Paid Player License Only">Paid Player License Only</option>
@@ -1400,8 +1381,8 @@ export default function App() {
         <div className="space-y-4">
           {[
             {
-              q: 'What are your 1-month rates for N-Stream (Netflix), PrimeVision and Senbo?',
-              a: 'N-Stream Ultra 4K (TV Screen) is Rs. 1000/mo, N-Stream Mobile is Rs. 800/mo, PrimeVision Video Screen is Rs. 600/mo, and Senbo (Cinevo) 4K Server is Rs. 1500/mo.',
+              q: 'What are your 1-month rates for Screen Netflix and Screen Prime Video?',
+              a: 'Screen Netflix Ultra 4K (TV Screen) is Rs. 1000/mo, Screen Netflix Mobile is Rs. 800/mo, and Screen Prime Video is Rs. 600/mo.',
             },
             {
               q: 'How do I get my free 24-hour test line?',
@@ -1441,7 +1422,7 @@ export default function App() {
                 </span>
               </div>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Your premier source for verified OTT subscriptions, Senbo servers, and official ORA HUB, Kemet TV, Ibo
+                Your premier source for verified OTT subscriptions, 4K streaming accounts, and official ORA HUB, Kemet TV, Ibo
                 One & Ib Player activations.
               </p>
             </div>
@@ -1449,10 +1430,10 @@ export default function App() {
             <div>
               <h4 className="text-white font-bold text-sm mb-3">Monthly Rates (1 Month)</h4>
               <ul className="space-y-1.5 text-xs text-slate-400">
-                <li>N-Stream 4K TV Screen: Rs. 1000</li>
-                <li>N-Stream Mobile: Rs. 800</li>
-                <li>PrimeVision Video: Rs. 600</li>
-                <li>Senbo 4K Server: Rs. 1500</li>
+                <li>Screen Netflix 4K TV Screen: Rs. 1000</li>
+                <li>Screen Netflix Mobile: Rs. 800</li>
+                <li>Screen Prime Video: Rs. 600</li>
+                <li>Tube-Premium Ad-Free: Rs. 450</li>
               </ul>
             </div>
 
