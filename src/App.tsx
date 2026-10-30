@@ -410,12 +410,12 @@ export default function App() {
     setTimeout(() => setCopiedField(null), 2500);
   };
 
-  const openWhatsApp = (customMessage?: string) => {
+  const openWhatsApp = (customMessage?: string, phone = '923272472760') => {
     const text =
       customMessage ||
       'Hello TV Zone, I want to inquire about Paid Player Activation & Subscription packages.';
     const encoded = encodeURIComponent(text);
-    window.open(`https://wa.me/923272472760?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
   };
 
   const handleOrderSubmit = (e: React.FormEvent) => {
@@ -1499,6 +1499,53 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* TWO FIXED FLOATING WHATSAPP CHAT BUTTONS */}
+      {/* 1. Bottom-Left Fixed WhatsApp Button: 03142229545 (Easypaisa/JazzCash Support) */}
+      <div className="fixed bottom-5 left-5 z-50">
+        <button
+          onClick={() =>
+            openWhatsApp(
+              'Hello TV Zone Support, I am contacting you for payment/subscription inquiry via 03142229545.',
+              '923142229545'
+            )
+          }
+          className="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#051a0e] border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-slate-950 font-black text-xs shadow-[0_0_25px_rgba(37,211,102,0.45)] transition-all duration-300 cursor-pointer hover:scale-105"
+          title="WhatsApp Support: 03142229545"
+        >
+          <div className="relative flex items-center justify-center">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#25D366] group-hover:bg-slate-950 animate-ping absolute" />
+            <MessageCircle className="w-5 h-5 fill-current relative z-10" />
+          </div>
+          <div className="text-left leading-tight">
+            <div className="text-[10px] uppercase tracking-wider opacity-80 font-bold">WhatsApp 1</div>
+            <div className="font-mono text-xs font-black">0314 2229545</div>
+          </div>
+        </button>
+      </div>
+
+      {/* 2. Bottom-Right Fixed WhatsApp Button: 03272472760 (Direct Support & Raast ID) */}
+      <div className="fixed bottom-5 right-5 z-50">
+        <button
+          onClick={() =>
+            openWhatsApp(
+              'Hello TV Zone, I want to inquire about Paid Player Activation & Subscription packages.',
+              '923272472760'
+            )
+          }
+          className="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#051a0e] border-2 border-[#ccff00] text-[#ccff00] hover:bg-[#ccff00] hover:text-slate-950 font-black text-xs shadow-[0_0_25px_rgba(204,255,0,0.45)] transition-all duration-300 cursor-pointer hover:scale-105"
+          title="WhatsApp Support: 03272472760"
+        >
+          <div className="relative flex items-center justify-center">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#ccff00] group-hover:bg-slate-950 animate-ping absolute" />
+            <MessageCircle className="w-5 h-5 fill-current relative z-10" />
+          </div>
+          <div className="text-left leading-tight">
+            <div className="text-[10px] uppercase tracking-wider opacity-80 font-bold">WhatsApp 2</div>
+            <div className="font-mono text-xs font-black">0327 2472760</div>
+          </div>
+        </button>
+      </div>
     </div>
   );
 }
