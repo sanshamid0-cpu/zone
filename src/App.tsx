@@ -1500,52 +1500,32 @@ export default function App() {
         </div>
       </footer>
 
-      {/* TWO FIXED FLOATING WHATSAPP CHAT BUTTONS */}
-      {/* 1. Bottom-Left Fixed WhatsApp Button: 03142229545 (Easypaisa/JazzCash Support) */}
-      <div className="fixed bottom-5 left-5 z-50">
-        <button
-          onClick={() =>
-            openWhatsApp(
-              'Hello TV Zone Support, I am contacting you for payment/subscription inquiry via 03142229545.',
-              '923142229545'
-            )
-          }
-          className="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#051a0e] border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-slate-950 font-black text-xs shadow-[0_0_25px_rgba(37,211,102,0.45)] transition-all duration-300 cursor-pointer hover:scale-105"
-          title="WhatsApp Support: 03142229545"
-        >
-          <div className="relative flex items-center justify-center">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#25D366] group-hover:bg-slate-950 animate-ping absolute" />
-            <MessageCircle className="w-5 h-5 fill-current relative z-10" />
-          </div>
-          <div className="text-left leading-tight">
-            <div className="text-[10px] uppercase tracking-wider opacity-80 font-bold">WhatsApp 1</div>
-            <div className="font-mono text-xs font-black">0314 2229545</div>
-          </div>
-        </button>
-      </div>
+      {/* TWO FIXED CIRCULAR WHATSAPP BUTTONS */}
+      {/* Left Side WhatsApp Button (03142229545) */}
+      <a
+        href="https://wa.me/923142229545"
+        className="wa-circular-btn wa-left-pos"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="WhatsApp 03142229545"
+      >
+        <svg className="wa-svg-icon" viewBox="0 0 24 24">
+          <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001l-1.416 5.169 5.291-1.387c1.467.8 3.127 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.667-1.037-5.176-2.925-7.062a9.923 9.923 0 0 0-7.066-2.943zm5.836 14.123c-.244.688-1.42 1.314-1.968 1.396-.548.082-1.246.124-3.568-.842-2.973-1.238-4.887-4.262-5.035-4.46-.149-.198-1.206-1.603-1.206-3.058 0-1.455.762-2.17 1.035-2.464.273-.294.596-.368.795-.368.198 0 .396.002.571.011.187.008.437-.071.684.522.248.594.845 2.062.919 2.212.074.149.124.322.025.522-.099.198-.149.322-.298.496-.149.173-.314.387-.448.522-.149.149-.305.312-.131.611.173.298.772 1.272 1.657 2.06 1.139 1.013 2.1 1.326 2.398 1.475.298.149.472.124.646-.075.173-.198.745-.867.943-1.165.198-.298.396-.248.669-.149.273.099 1.738.819 2.036.968.298.149.496.223.571.347.074.124.074.719-.17 1.407z" />
+        </svg>
+      </a>
 
-      {/* 2. Bottom-Right Fixed WhatsApp Button: 03272472760 (Direct Support & Raast ID) */}
-      <div className="fixed bottom-5 right-5 z-50">
-        <button
-          onClick={() =>
-            openWhatsApp(
-              'Hello TV Zone, I want to inquire about Paid Player Activation & Subscription packages.',
-              '923272472760'
-            )
-          }
-          className="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#051a0e] border-2 border-[#ccff00] text-[#ccff00] hover:bg-[#ccff00] hover:text-slate-950 font-black text-xs shadow-[0_0_25px_rgba(204,255,0,0.45)] transition-all duration-300 cursor-pointer hover:scale-105"
-          title="WhatsApp Support: 03272472760"
-        >
-          <div className="relative flex items-center justify-center">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#ccff00] group-hover:bg-slate-950 animate-ping absolute" />
-            <MessageCircle className="w-5 h-5 fill-current relative z-10" />
-          </div>
-          <div className="text-left leading-tight">
-            <div className="text-[10px] uppercase tracking-wider opacity-80 font-bold">WhatsApp 2</div>
-            <div className="font-mono text-xs font-black">0327 2472760</div>
-          </div>
-        </button>
-      </div>
+      {/* Right Side WhatsApp Button (03272472760) */}
+      <a
+        href="https://wa.me/923272472760"
+        className="wa-circular-btn wa-right-pos"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="WhatsApp 03272472760"
+      >
+        <svg className="wa-svg-icon" viewBox="0 0 24 24">
+          <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001l-1.416 5.169 5.291-1.387c1.467.8 3.127 1.222 4.781 1.223h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.667-1.037-5.176-2.925-7.062a9.923 9.923 0 0 0-7.066-2.943zm5.836 14.123c-.244.688-1.42 1.314-1.968 1.396-.548.082-1.246.124-3.568-.842-2.973-1.238-4.887-4.262-5.035-4.46-.149-.198-1.206-1.603-1.206-3.058 0-1.455.762-2.17 1.035-2.464.273-.294.596-.368.795-.368.198 0 .396.002.571.011.187.008.437-.071.684.522.248.594.845 2.062.919 2.212.074.149.124.322.025.522-.099.198-.149.322-.298.496-.149.173-.314.387-.448.522-.149.149-.305.312-.131.611.173.298.772 1.272 1.657 2.06 1.139 1.013 2.1 1.326 2.398 1.475.298.149.472.124.646-.075.173-.198.745-.867.943-1.165.198-.298.396-.248.669-.149.273.099 1.738.819 2.036.968.298.149.496.223.571.347.074.124.074.719-.17 1.407z" />
+        </svg>
+      </a>
     </div>
   );
 }
